@@ -1,11 +1,17 @@
 import { Contact } from '../interface/contact.interface';
 import { Observable, of } from 'rxjs';
+import { sortBy } from 'lodash';
+
+const getContact = (id: string): Contact => items.find(item => item.id === id);
+const getContact$ = (id: string): Observable<Contact> => of(getContact(id));
+const getContacts = (): Contact[] => sortBy(items, 'name').filter(item => item.id !== 'you');
+const getContacts$ = (): Observable<Contact[]> => of(getContacts());
 
 export const contactApi = {
-  getContacts$: (): Observable<Contact[]> => of(items),
-  getContacts: (): Contact[] => items,
-  getContact$: (id: string): Observable<Contact> => of(items.find(item => item.id === id)),
-  getContact: (id: string): Contact => items.find(item => item.id === id),
+  getContacts$,
+  getContacts,
+  getContact$,
+  getContact,
 };
 
 const items: Contact[] = [

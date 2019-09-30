@@ -1,4 +1,4 @@
-<ActionBar class="action-bar"> <Label class="action-bar-title" text="Messages"></Label> </ActionBar>
+<ActionBar class="action-bar"> <Label class="action-bar-title" text="Contacts"></Label> </ActionBar>
 
 <GridLayout class="page page-content">
   <ng-container *ngIf="(items$ | async) as items">
@@ -12,7 +12,7 @@
                 stretch="aspectFill"
                 verticalAlignment="center"
                 horizontalAlignment="left"
-                [src]="item?.contact?.avatar"
+                [src]="item?.avatar"
               ></Image>
             </StackLayout>
             <StackLayout row="0" col="1" verticalAlignment="top">
@@ -20,19 +20,19 @@
                 <Label
                   row="0" col="0"
                   class="contact-name"
-                  [text]="item?.contact?.name"
+                  [text]="item?.name"
                   verticalAlignment="center"
                 ></Label>
                 <Label
                   row="0" col="1"
                   class="message-time text-muted"
-                  [text]="item?.lastMessage?.timestamp"
+                  [text]="item?.username"
                   verticalAlignment="center"
                 ></Label>
               </GridLayout>
               <Label
                 class="message-text text-muted"
-                [text]="item?.lastMessage?.text"
+                [text]="item?.email"
                 verticalAlignment="center"
                 textWrap="true"
                 maxLines="2"

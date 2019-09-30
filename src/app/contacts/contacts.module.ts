@@ -3,11 +3,13 @@ import { NativeScriptCommonModule } from 'nativescript-angular/common';
 import { NativeScriptRouterModule } from 'nativescript-angular';
 
 import { routes } from './contacts.routing';
-import { ContactsListComponent } from './containers/contacts-list.component';
+
+import { ContactDetailComponent } from './containers/contact-detail/contact-detail.component';
+import { ContactListComponent } from './containers/contact-list/contact-list.component';
 
 @NgModule({
   imports: [NativeScriptCommonModule, NativeScriptRouterModule.forChild(routes)],
-  declarations: [ContactsListComponent],
+  declarations: [ContactDetailComponent, ContactListComponent],
   schemas: [NO_ERRORS_SCHEMA],
 })
 export class ContactsModule {}

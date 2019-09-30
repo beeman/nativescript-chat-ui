@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterExtensions } from 'nativescript-angular';
 import { Observable } from 'rxjs';
 
 import { MessagesService } from '~/app/messages/services/messages.service';
@@ -12,7 +11,7 @@ import { Chat } from '~/app/shared/interface/chat.interface';
 export class MessageListComponent implements OnInit {
   items$: Observable<Chat[]>;
 
-  constructor(private service: MessagesService, private router: RouterExtensions) {}
+  constructor(private service: MessagesService) {}
 
   ngOnInit(): void {
     this.items$ = this.service.getChats();
