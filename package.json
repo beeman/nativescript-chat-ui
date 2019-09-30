@@ -1,6 +1,9 @@
 {
+  "name": "tns-template-chat-ui",
+  "version": "1.0.0",
   "nativescript": {
-    "id": "org.nativescript.chatui",
+    "displayName": "Chat UI",
+    "id": "io.colmena.chatui",
     "tns-android": {
       "version": "6.1.1"
     },
@@ -8,12 +11,13 @@
       "version": "6.1.0"
     }
   },
-  "description": "NativeScript Application",
-  "license": "SEE LICENSE IN <your-license-filename>",
+  "description": "\uD83D\uDDE3UI for a messaging app using NativeScript + Angular",
+  "license": "MIT",
   "repository": "<fill-your-repository-here>",
   "scripts": {
     "lint": "tslint \"src/**/*.ts\""
   },
+  "keywords": ["ux-preview", "chat", "messaging", "social"],
   "dependencies": {
     "@angular/animations": "~8.2.0",
     "@angular/common": "~8.2.0",
@@ -42,5 +46,5 @@
     "typescript": "~3.5.3"
   },
   "gitHead": "e9af7b54b243e55ef28e4610c4ef8c83837d86c0",
-  "readme": "NativeScript Application"
+  "readme": "README.md"
 }
