@@ -3045,6 +3045,11 @@ nativescript-intl@^3.0.0:
   resolved "https://registry.yarnpkg.com/nativescript-intl/-/nativescript-intl-3.0.0.tgz#82ee9be7d377172b3c4295734723037628e186a7"
   integrity sha1-gu6b59N3Fys8QpVzRyMDdijhhqc=
 
+nativescript-iqkeyboardmanager@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/nativescript-iqkeyboardmanager/-/nativescript-iqkeyboardmanager-1.5.1.tgz#511b9c3aae89381bbaf77b5a627fd7d4ef072952"
+  integrity sha512-ek7NwKb/vJCUebI7IAi606vyEykwZsmKSGdvtPSmxjnZle4iyW4w5iSCAAB2vmG19PgLViIXFb/+v8byLICLOg==
+
 nativescript-theme-core@~1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/nativescript-theme-core/-/nativescript-theme-core-1.0.6.tgz#cea174696bc5b3bd2025412c9c2eb4a5ed2b7f2d"

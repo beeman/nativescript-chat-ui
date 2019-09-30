@@ -1,18 +1,14 @@
-import { Component, OnInit } from "@angular/core";
-import { isAndroid } from "tns-core-modules/platform";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: "ns-app",
-    templateUrl: "app.component.html",
-    styleUrls: ["./app.component.scss"]
+  selector: 'ns-app',
+  templateUrl: 'app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  constructor() {}
 
-    constructor() {
-        // Use the component constructor to inject providers.
-    }
-
-    ngOnInit(): void {
-        // Init your component properties here.
-    }
+  ngOnInit(): void {
+    // Init your component properties here.
+  }
 }

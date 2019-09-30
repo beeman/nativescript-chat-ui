@@ -1,0 +1,45 @@
+.contact-avatar {
+  height: 48;
+  width: 48;
+  border-radius: 50%;
+  border-color: #999;
+  border-width: 1;
+}
+.message-background {
+  background-color: #e4dcd4;
+}
+.message-text {
+  border-radius: 10;
+  padding: 10;
+  font-size: 16;
+}
+.message-time {
+  font-size: 12;
+}
+.message-incoming .message-text {
+  background-color: #ffffff;
+}
+.message-outgoing .message-text {
+  background-color: #dcf8c6;
+}
+.message-input-bar {
+  padding: 10;
+}
+.message-input {
+  padding: 0 10;
+  font-size: 16;
+  border-radius: 25%;
+  border-width: 1;
+  border-color: #d8d8d8;
+  height: 40;
+  margin: 0 10;
+}
+.message-send {
+  font-size: 20;
+  height: 40;
+  width: 40;
+  /*border-radius: 25%;*/
+  /*border-width: 1;*/
+  /*border-color: #d8d8d8;*/
+  /*background-color: transparent;*/
+}

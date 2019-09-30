@@ -1,0 +1,60 @@
+<ActionBar class="action-bar">
+  <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
+  <GridLayout row="0" col="1" rows="auto" columns="auto, auto, *">
+    <Image
+      class="contact-avatar"
+      row="0"
+      col="0"
+      stretch="aspectFill"
+      verticalAlignment="center"
+      horizontalAlignment="center"
+      [src]="contact.avatar"
+    ></Image>
+    <label row="0" col="1" verticalAlignment="center" class="action-bar-title m-l-5" [text]="contact.name"></label>
+  </GridLayout>
+</ActionBar>
+<GridLayout rows="*, auto" columns="*">
+  <ActivityIndicator
+    [busy]="this.loading"
+    *ngIf="this.loading"
+    width="20"
+    height="20"
+    class="activity-indicator m-b-5 m-t-10"
+  ></ActivityIndicator>
+  <ng-container *ngIf="(messages$ | async) as messages">
+    <ListView row="0" col="0" class="list-group message-background" [items]="messages" separatorColor="transparent">
+      <ng-template let-item="item" let-i="index">
+        <StackLayout [ngClass]="{ 'message-incoming': isIncoming(item), 'message-outgoing': isOutgoing(item) }">
+          <StackLayout *ngIf="i === 0 && hasMoreMessages()">
+            <Button
+              width="45%"
+              style="font-size: 12"
+              class="btn btn-primary btn-active btn-rounded-lg text-capitalize font-weight-bold"
+              text="Load previous messages..."
+            ></Button>
+          </StackLayout>
+          <StackLayout class="list-group-item message">
+            <StackLayout
+              width="75%"
+              orientation="vertical"
+              class="message-text"
+              [ngClass]="{ 'pull-left': isIncoming(item), 'pull-right': isOutgoing(item) }"
+            >
+              <Label horizontalAlignment="left" verticalAlignment="center" textWrap="true" [text]="item.text"></Label>
+              <Label
+                horizontalAlignment="right"
+                verticalAlignment="bottom"
+                class="message-time text-muted"
+                [text]="item.timestamp"
+              ></Label>
+            </StackLayout>
+          </StackLayout>
+        </StackLayout>
+      </ng-template>
+    </ListView>
+    <GridLayout class="message-input-bar" row="1" col="0" columns="*, auto">
+      <TextField col="0" backgroundColor="white" class="message-input" text=""></TextField>
+      <Button text="&#xf1d8;" col="1" class="message-send fa"></Button>
+    </GridLayout>
+  </ng-container>
+</GridLayout>

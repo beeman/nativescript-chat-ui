@@ -1,0 +1,48 @@
+<ActionBar class="action-bar"> <Label class="action-bar-title" text="Messages"></Label> </ActionBar>
+
+<GridLayout class="page page-content">
+  <ng-container *ngIf="(items$ | async) as items">
+    <ListView [items]="items" class="list-group">
+      <ng-template let-item="item">
+        <StackLayout class="p-x-0 m-x-0" [nsRouterLink]="[item.id]" pageTransition="slideLeft">
+          <GridLayout class="list-group-item p-x-0 p-y-5" rows="auto" columns="auto, *">
+            <StackLayout width="60" col="0" row="0" verticalAlignment="center">
+              <Image
+                class="contact-avatar"
+                stretch="aspectFill"
+                [ngClass]="{ usuarioConectado: true }"
+                verticalAlignment="center"
+                horizontalAlignment="left"
+                [src]="item?.contact?.avatar"
+              ></Image>
+            </StackLayout>
+            <StackLayout row="0" col="1" verticalAlignment="top">
+              <GridLayout rows="auto" columns="*, auto">
+                <Label
+                  row="0" col="0"
+                  class="contact-name"
+                  [text]="item?.contact?.name"
+                  verticalAlignment="center"
+                ></Label>
+                <Label
+                  row="0" col="1"
+                  class="message-time text-muted"
+                  [text]="item?.lastMessage?.timestamp"
+                  verticalAlignment="center"
+                ></Label>
+              </GridLayout>
+              <Label
+                class="message-text text-muted"
+                [text]="item?.lastMessage?.text"
+                verticalAlignment="center"
+                textWrap="true"
+                maxLines="2"
+              ></Label>
+            </StackLayout>
+          </GridLayout>
+        </StackLayout>
+        <!--        <Label [text]="item?.lastMessage?.text" class="list-group-item"></Label>-->
+      </ng-template>
+    </ListView>
+  </ng-container>
+</GridLayout>

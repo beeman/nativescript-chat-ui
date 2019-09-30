@@ -1,21 +1,19 @@
 {
   "extends": "tslint:latest",
   "linterOptions": {
-      "exclude": [
-          "app/*.d.ts"
-      ]
+    "exclude": ["app/*.d.ts"]
   },
-  "rulesDirectory": [
-    "node_modules/codelyzer"
-  ],
+  "rulesDirectory": ["node_modules/codelyzer"],
   "rules": {
-    "array-type": [true, "generic"],
+    "array-type": [false, "generic"],
     "arrow-return-shorthand": true,
     "component-class-suffix": true,
     "deprecation": true,
     "directive-class-suffix": true,
-    "member-access": [true, "no-public"],
-    "newline-before-return": true,
+    "member-access": [false],
+    "member-ordering": [false],
+    "arrow-parens": false,
+    "newline-before-return": false,
     "no-angle-bracket-type-assertion": false,
     "no-attribute-parameter-decorator": true,
     "no-consecutive-blank-lines": [true, 1],
@@ -40,12 +38,12 @@
     "use-life-cycle-interface": true,
     "use-output-property-decorator": true,
     "use-pipe-transform-interface": true,
-    "trailing-comma": [true, {
-      "multiline": "never",
-      "singleline": "never"
-    }],
     "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"],
-    "whitespace": [true,
+    "quotemark": [true, "single"],
+    "interface-name": false,
+    "no-empty": false,
+    "whitespace": [
+      true,
       "check-branch",
       "check-decl",
       "check-operator",
