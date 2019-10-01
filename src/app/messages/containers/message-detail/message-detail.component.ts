@@ -5,7 +5,7 @@ import { MessagesService } from '~/app/messages/services/messages.service';
 import { Observable, Subscription } from 'rxjs';
 
 import { Message } from '~/app/shared/interface/message.interface';
-import { delay, map, tap } from 'rxjs/internal/operators';
+import { map, tap } from 'rxjs/internal/operators';
 import { Contact } from '~/app/shared/interface/contact.interface';
 import { Chat } from '~/app/shared/interface/chat.interface';
 
